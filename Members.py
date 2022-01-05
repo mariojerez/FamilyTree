@@ -62,6 +62,16 @@ class Member:
       print(sibling, " added as a sibling")
     else:
       print(sibling, " is already a sibling")
+  
+  def getAuntsAndUncles(self):
+    aunts_uncles = []
+    for parent in self.parents:
+      for parent_sibling in parent.siblings:
+        aunts_uncles.append(parent_sibling)
+    return aunts_uncles
+
+  def getFirstCousins(self):
+    pass
 
 def orderMembersByAge(members):
   listOfTuples = [(member.dateOfBirth, member) for member in members]
